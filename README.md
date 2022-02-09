@@ -7,6 +7,8 @@ To run the program you need to install the lua binaries [http://luabinaries.sour
 
 Requires ffmpeg [https://ffmpeg.org/download.html], once you download the zip, unpack it into a bin folder in the project files.
 
+You can customise your own render calculations with render.lua
+
 Has 2 example files
 
 render.lua0 contains contains code for creating a binary image out of a string.
