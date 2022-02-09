@@ -21,6 +21,8 @@ library.run = function( filename, leadingZero )
 end
 
 library.save = function( pMatrix, name, toClose )
+	os.execute("rmdir /s frames")
+	os.execute("mkdir /s frames\\ppm")
 	local file, prevlineindex = io.open("frames\\ppm\\" .. name .. ".ppm", "w+"), 1
 	file:write("P3\n" .. settings.render.xres .. " " .. settings.render.yres .. "\n255\n")
 	local prevCursor = {}
