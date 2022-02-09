@@ -1,0 +1,18 @@
+--[[ Metaball render example script ]]
+
+--[[ this script will determine what to render every frame, use a callback. 
+
+The callback function has parameters pixel x, pixel y, current frame, and intex and must return an r, g, b value
+
+]]
+local ini, Metaball, Color = require( "lib/ini" ), require( "lib/class/metaball" ), require( "lib/class/color" )
+local settings = ini.load( "settings.ini" )
+
+local meta1, meta2 = Metaball.new(settings.render.xres / 2, settings.render.yres / 2, 5, Color.new(1, 0, 0)), Metaball.new(0, 0, 5, Color.new(0, 1, 0))
+
+function render( x, y, frame, i )
+	meta2.setpos(settings.render.xres / settings.render.frames * frame, settings.render.yres / settings.render.frames * frame)
+	return Metaball.draw(x, y, 0.25)
+end
+
+return render

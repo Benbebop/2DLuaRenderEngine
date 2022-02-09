@@ -1,0 +1,30 @@
+--[[ string to binary image example ]]
+
+--[[ this script will determine what to render every frame, use a callback. 
+
+The callback function has parameters pixel x, pixel y, current frame, and intex and must return an r, g, b value
+
+]]
+
+local coolstring = [[]]
+local binstring = ""
+
+function numberToBinStr(x)
+	ret=""
+	while x~=1 and x~=0 do
+		ret=tostring(x%2)..ret
+		x=math.modf(x/2)
+	end
+	ret=tostring(x)..ret
+	return ret
+end
+
+for v in coolstring:gmatch(".") do
+	binstring = binstring .. numberToBinStr(string.byte(v))
+end
+
+function render( x, y, frame, i )
+	return 0
+end
+
+return render
