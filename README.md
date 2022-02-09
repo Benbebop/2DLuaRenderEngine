@@ -9,6 +9,6 @@ Requires ffmpeg [https://ffmpeg.org/download.html], once you download the zip, u
 
 Has 2 example files
 
-render.lua0 contains code for creating 2d metaballs with the Metaball class
+render.lua0 contains contains code for creating a binary image out of a string.
 
-render.lua1 contains code for creating a binary image out of a string.
+render.lua1 contains code for creating 2d metaballs with the Metaball class.
