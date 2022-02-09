@@ -1,6 +1,6 @@
 --[[ this script will determine what to render every frame, use a callback. 
 
-The callback function has parameters pixel x, pixel y, current frame, and intex and must return an r, g, b value
+The callback function has parameters pixel x, pixel y, current frame, and index and must return an r, g, b value
 
 ]]
 
