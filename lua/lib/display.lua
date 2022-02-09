@@ -37,7 +37,13 @@ library.save = function( pMatrix, name, toClose )
 		prevCursor = i
 	end
 	
-	os.execute("bin\\ffmpeg -hide_banner -loglevel error -y -i frames\\ppm\\" .. name .. ".ppm frames\\" .. name .. ".png")
+	local filetmp = io.open("bin\\ffmpeg","rb")
+	
+	if filetmp then
+		os.execute("bin\\ffmpeg -hide_banner -loglevel error -y -i frames\\ppm\\" .. name .. ".ppm frames\\" .. name .. ".png")
+	end
+	
+	filetmp:close()
 end
 
 return setmetatable( library, {
